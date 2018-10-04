@@ -1,11 +1,22 @@
-<%= simple_form_for @dog do |f| %>
+<% if @dog.errors %>
+	<div class="error-container">
+		<% @dog.errors.full_messages.each do |msg| %>
+			<div><%=msg%></div>
+		<% end %>
+	</div>
+<% end %>
+
+
+<%= simple_form_for @dog, defaults: { input_html: { class: "form-control" } } do |f| %>
   <%= f.input :name %>
   <%= f.input :description, as: :text %>
-  <%= f.input :image, as: :file %>
+
+  <%= f.label :images %>
+  <%= f.file_field :images, multiple: true %>
 
   <% if @dog.images.any? %>
     <%= image_tag @dog.images.first %>
   <% end %>
 
-  <%= f.button :submit %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
 <% end %>

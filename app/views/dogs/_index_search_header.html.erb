@@ -1,0 +1,27 @@
+<ul class="index-search-menu">
+	<li class="<%=@active_tab == 'all' ? 'active' : ''%>">
+		<%= link_to("all", root_path)%>
+	</li>
+
+	<li class="<%=@active_tab == 'top' ? 'active' : ''%>">
+		<%= link_to("top", root_path(sort: 'top', t: 'hour'))%>
+	</li>
+</ul>
+
+
+<% if @top_sort_active %>
+	<div id="sort-top-select-box">
+
+		<span>Likes from: </span>
+
+		<%= form_tag(root_path(sort: 'top'), {method: 'get', name:'switch_top_sort'}) do %>
+
+			<div class="select-style">
+
+					<%= hidden_field_tag :sort, 'top' %>
+
+					<%= select_tag :t, options_for_select([["Past Hour", "hour"], ["Past 24 Hours", "day"], ["Past Week", "week"], ["Past Month","month"], ["Past Year","year"]], params[:t]), onchange: "javascript: document.switch_top_sort.submit();" %> 
+			</div>
+	   	<% end %>
+	</div>
+<% end %>

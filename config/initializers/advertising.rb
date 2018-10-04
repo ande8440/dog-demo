@@ -1,0 +1,1 @@
+$ad_injection_interval = 2

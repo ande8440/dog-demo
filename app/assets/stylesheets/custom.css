@@ -1,0 +1,153 @@
+/* TABLE OF CONTENTS */
+
+/* UNIVERSALS */
+/* SORT MENUS */
+/* LIKE BUTTONS */
+/* CUSTOM GRID FORMATTING */
+
+/* UNIVERSALS */
+
+header {padding: 10px;}
+#main {padding: 0 10px;}
+.btn {margin: 10px 0;}
+
+
+/* SORT MENUS */
+
+.index-search-menu {
+  margin: 12px 0;
+  display: block;
+  height: 42px;
+  line-height: 42px;
+  border: 1px solid #e0e0e0;
+  list-style-type: none;
+  padding: 0;
+}
+
+.index-search-menu li {
+  display: inline;
+  margin: 0;
+  padding: 5px;
+}
+
+.index-search-menu li a{
+  margin: 0 10px 0 10px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.index-search-menu li.active a{
+  text-decoration: underline;
+}
+
+form[name='switch_top_sort']{
+  display: inline-block;
+}
+
+#sort-top-select-box {
+  margin: 12px 0;
+}
+
+div.pagination {
+  margin: 12px 0;
+}
+
+/* LIKE BUTTONS */
+
+.like-container {
+  margin: 12px 0;
+}
+
+.like-button {
+  border: 2px solid #8a8a8a;
+  background-color: transparent;
+  text-decoration: none;
+  padding: 1rem;
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+  display: inline-block;
+  border-radius: 3rem;
+  color: #8a8a8a;
+  transition: all ease 0.4s;
+}
+
+.like-button span {
+  margin-left: 0.5rem;
+}
+
+.like-button .fa,
+.like-button span {
+  transition: all ease 0.4s;
+}
+
+.like-button:focus {
+  background-color: transparent;
+}
+
+.like-button:focus .fa,
+.like-button:focus span {
+  color: #8a8a8a;
+}
+
+.like-button:hover {
+  border-color: #cc4b37;
+  background-color: transparent;
+}
+
+.like-button:hover .fa,
+.like-button:hover span {
+  color: #cc4b37;
+}
+
+.liked {
+  background-color: #cc4b37;
+  border-color: #cc4b37;
+}
+
+.liked .fa,
+.liked span {
+  color: #fefefe;
+}
+
+.liked:focus {
+  background-color: #cc4b37;
+}
+
+.liked:focus .fa,
+.liked:focus span {
+  color: #fefefe;
+}
+
+.liked:hover {
+  background-color: #cc4b37;
+  border-color: #cc4b37;
+}
+
+.liked:hover .fa,
+.liked:hover span {
+  color: #fefefe;
+}
+
+span.like-count {
+  padding: 1px 9px;
+  border-left: 1px solid
+}
+
+/* 4. CUSTOM GRID FORMATTING */
+.dog-thumbnail {
+  max-height: 100%;
+  height: 100%;
+}
+
+
+.dog-thumbnail img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 100%;
+}
+
+.dogs-row > *:nth-child(3n+4) {
+  clear: left;
+}
+

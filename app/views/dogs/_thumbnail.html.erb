@@ -1,6 +1,12 @@
-<a href="<%= url_for(dog) %>">
-  <article>
-    <h2 class="dog-name"><%= dog.name %></h2>
-    <%= image_tag url_for(dog.images.first), class: "dog-photo", alt: "Photo of #{dog.name}" %>
-  </article>
-</a>
+<div class="col-sm-4">
+	<a href="<%= url_for(dog) %>">
+	  <article class="dog-item dog-thumbnail">
+	    <h2 class="dog-name"><%= dog.name %></h2>
+	    <%= image_tag url_for(dog.images.first), class: "dog-photo", alt: "Photo of #{dog.name}" %>
+	    <%= render partial: 'likes_partial', locals: {dog: dog} %>
+
+	  </article>
+	</a>
+</div>
+
+<%= render partial: 'dog_ad' if (dog_counter + 1) % $ad_injection_interval.to_i == 0 %>

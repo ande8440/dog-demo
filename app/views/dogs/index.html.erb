@@ -1,1 +1,11 @@
-<%= render partial: 'thumbnail', collection: @dogs, as: :dog %>
+<%= render partial: 'index_search_header'%>
+
+<%= will_paginate @dogs %>
+
+<div class="container-fluid">
+	<div class="row dogs-row">
+		<%= render partial: 'thumbnail', collection: @dogs, as: :dog %>
+	</div>
+</div>
+
+<%= will_paginate @dogs %>

@@ -1,13 +1,18 @@
 <section>
   <h2><%= @dog.name %></h2>
 
+  <%= render partial: 'likes_partial', locals: {dog: @dog} %>
+
   <% @dog.images.each do |image| %>
     <%= image_tag url_for(image), alt: "Photo of #{@dog.name}" %>
   <% end %>
 
   <p><%= @dog.description %></p>
 
-  <%= link_to "Edit #{@dog.name}'s Profile", edit_dog_path %>
-  <br>
-  <%= link_to "Delete #{@dog.name}'s Profile", dog_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% if current_user && @dog.owner == current_user %>
+	  <%= link_to "Edit #{@dog.name}'s Profile", edit_dog_path %>
+	  <br>
+	  <%= link_to "Delete #{@dog.name}'s Profile", dog_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+  
 </section>
